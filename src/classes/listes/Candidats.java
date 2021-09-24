@@ -2,16 +2,16 @@ package classes.listes;
 
 import java.util.ArrayList;
 
-import classes.*;
+import classes.Candidat;
 
 public class Candidats {
-static ArrayList<Candidat> listeCandidats = new ArrayList<Candidat>();
+public static ArrayList<Candidat> listeCandidats = new ArrayList<Candidat>();
 	
-	public void addList(Candidat cand1){
+	public static void addList(Candidat cand1){
 		listeCandidats.add(cand1);
 	}
 	
-	public void displayList() {  		
+	public static void displayList() {  		
 		for (Candidat cd:listeCandidats) {
 			System.out.println(cd.toString());
 		}
