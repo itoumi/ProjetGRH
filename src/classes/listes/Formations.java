@@ -7,7 +7,7 @@ import classes.Formation;
 public class Formations {
 	public static ArrayList<Formation> listeFormations = new ArrayList<Formation>();
 	
-	public void addList(Formation frm1){
+	public static void addList(Formation frm1){
 		listeFormations.add(frm1);
 	}
 			

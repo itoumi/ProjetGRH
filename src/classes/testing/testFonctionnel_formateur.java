@@ -25,7 +25,7 @@ public class testFonctionnel_formateur {
 		listGrade.add("senior");
 		
 		for (String grade: listGrade) {
-			if ((vc.VerifChaine(nom))&&(vc.VerifChaine(prenom))&&(vc.VerifChaine(specialite))) {
+			if ((vc.VerifChaine(nom))&&(vc.VerifChaine(prenom))&&(vc.VerifChaine(specialite))&&(vc.VerifChaine(grade))) {
 				if (vc.VerifGrade(grade)) {
 					Formateur frm = new Formateur(nom,prenom,specialite, grade);
 					Formateurs.listeFormateurs.add(frm);

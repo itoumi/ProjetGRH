@@ -7,7 +7,7 @@ import classes.Formateur;
 public class Formateurs {
 	public static ArrayList<Formateur> listeFormateurs = new ArrayList<Formateur>();
 			
-	public void addList(Formateur frm1){
+	public static void addList(Formateur frm1){
 		listeFormateurs.add(frm1);
 	}
 			

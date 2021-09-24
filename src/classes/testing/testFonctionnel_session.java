@@ -26,7 +26,7 @@ public class testFonctionnel_session {
 		listMode.add("présentiel");
 		
 		for (String mode: listMode) {
-			if ((vc.VerifChaine(debut))&&(vc.VerifChaine(fin))&&(vc.VerifChaine(lieu))&&(vc.VerifChaine(titre_formation))) {
+			if ((vc.VerifChaine(debut))&&(vc.VerifChaine(fin))&&(vc.VerifChaine(lieu))&&(vc.VerifChaine(titre_formation))&&(vc.VerifChaine(mode))) {
 				if (vc.VerifSession(mode)) {
 					Session sess = new Session(debut,fin,titre_formation,lieu,mode);
 					Sessions.listeSessions.add(sess);

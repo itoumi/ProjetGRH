@@ -7,7 +7,7 @@ import classes.Session;
 public class Sessions {
 	public static ArrayList<Session> listeSessions = new ArrayList<Session>();
 	
-	public void addList(Session sess1){
+	public static void addList(Session sess1){
 		listeSessions.add(sess1);
 	}
 			

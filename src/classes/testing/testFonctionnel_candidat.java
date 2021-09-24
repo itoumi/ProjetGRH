@@ -18,16 +18,17 @@ public class testFonctionnel_candidat {
 		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 		System.out.println("vérification de l'ID:");
 		
-		ArrayList<Integer> listID = new ArrayList<Integer>();
-		listID.add(0);
-		listID.add(10);
-		listID.add(-3);
+		ArrayList<String> listID = new ArrayList<String>();
+		listID.add("0");
+		listID.add("10");
+		listID.add("-3");
 		
-		for (int id:listID) {
+		for (String id:listID) {
 			System.out.println("id n° ="+id+" :");
-			if((vc.VerifChaine(name))&&(vc.VerifChaine(dpt))) {
-				if (vc.VerifID(id)) {
-					Candidat cand = new Candidat(id,name,dpt);
+			if((vc.VerifChaine(name))&&(vc.VerifChaine(dpt))&&(vc.VerifChaine(id))) {
+				int idint = Integer.parseInt(id); 
+				if (vc.VerifID(idint)) {
+					Candidat cand = new Candidat(idint,name,dpt);
 					Candidats.listeCandidats.add(cand);
 					Candidats.displayList();
 					System.out.println("Candidat ajouté avec succès !");

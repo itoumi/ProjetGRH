@@ -10,8 +10,8 @@ public class testFonctionnel_formation {
 	public static void main(String[] args) {
 		
 		String formateur= "Toumi";
-		int prix = 120;
-		int nb_heures = 32;
+		String prix = "120";
+		String nb_heures = "32";
 		
 		VerifClasses vc=new VerifClasses();
 		
@@ -25,9 +25,11 @@ public class testFonctionnel_formation {
 		listTitre.add("Java-JSP");
 		
 		for (String titre:listTitre) {
-			if ((vc.VerifChaine(titre))&&(vc.VerifChaine(formateur))) {
-				if(vc.VerifTitre(titre)&&(vc.VerifNbHeures(nb_heures))&&(vc.VerifPrix(prix))) {
-					Formation formation = new Formation(titre, formateur, prix, nb_heures);
+			if ((vc.VerifChaine(titre))&&(vc.VerifChaine(formateur))&&(vc.VerifChaine(prix))&&(vc.VerifChaine(nb_heures))) {
+				int nbHint = Integer.parseInt(nb_heures);
+				int prix_int = Integer.parseInt(prix);
+				if(vc.VerifTitre(titre)&&(vc.VerifNbHeures(nbHint))&&(vc.VerifPrix(prix_int))) {
+					Formation formation = new Formation(titre, formateur, prix_int, nbHint);
 					Formations.listeFormations.add(formation);
 					Formations.displayList();
 					System.out.println("\n");
@@ -41,56 +43,60 @@ public class testFonctionnel_formation {
 		}
 		
 		// Vérification Classe d'équivalence prix
-				System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-				System.out.println("vérification du prix:");
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+		System.out.println("vérification du prix:");
 				
-				ArrayList<Integer> listPrix = new ArrayList<Integer>();
-				listPrix.add(0);
-				listPrix.add(100);
-				listPrix.add(250);
+		ArrayList<String> listPrix = new ArrayList<String>();
+		listPrix.add("0");
+		listPrix.add("100");
+		listPrix.add("250");
 				
-				String titre = "JAVA";
+		String titre = "JAVA";
 				
-				for (int prix1:listPrix) {
-					if ((vc.VerifChaine(titre))&&(vc.VerifChaine(formateur))) {
-						if(vc.VerifTitre(titre)&&(vc.VerifNbHeures(nb_heures))&&(vc.VerifPrix(prix1))) {
-							Formation formation = new Formation(titre, formateur, prix1, nb_heures);
-							Formations.listeFormations.add(formation);
-							Formations.displayList();
-							System.out.println("\n");
-						}else {
-							System.out.println(" un des paramètres entrés n'est pas valide !\n");
-						}
-						
-					}else {
-						System.out.println("l'un des paramétre est  vide!\n");
-					}
+		for (String prix1:listPrix) {
+			if ((vc.VerifChaine(titre))&&(vc.VerifChaine(formateur))&&(vc.VerifChaine(prix))&&(vc.VerifChaine(nb_heures))) {
+				int nbint1 = Integer.parseInt(nb_heures);
+				int prix_int1 = Integer.parseInt(prix1);
+				if(vc.VerifTitre(titre)&&(vc.VerifNbHeures(nbint1))&&(vc.VerifPrix(prix_int1))) {
+					Formation formation = new Formation(titre, formateur, prix_int1, nbint1);
+					Formations.listeFormations.add(formation);
+					Formations.displayList();
+					System.out.println("\n");
+				}else {
+					System.out.println(" un des paramètres entrés n'est pas valide !\n");
 				}
-				
-				// Vérification Classe d'équivalence nb Heures
-				System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-				System.out.println("vérification du nb Heures:");
-				
-				ArrayList<Integer> listNbH = new ArrayList<Integer>();
-				listNbH.add(10);
-				listNbH.add(11);
-				listNbH.add(40);
-				
-				for (int nb_heures1:listNbH) {
-					if ((vc.VerifChaine(titre))&&(vc.VerifChaine(formateur))) {
-						if(vc.VerifTitre(titre)&&(vc.VerifNbHeures(nb_heures1))&&(vc.VerifPrix(prix))) {
-							Formation formation = new Formation(titre, formateur, prix, nb_heures1);
-							Formations.listeFormations.add(formation);
-							Formations.displayList();
-							System.out.println("\n");
-						}else {
-							System.out.println(" un des paramètres entrés n'est pas valide !\n");
-						}
 						
-					}else {
-						System.out.println("l'un des paramétre est  vide!\n");
-					}
+			}else {
+				System.out.println("l'un des paramétre est  vide!\n");
+			}
+		}
+				
+		// Vérification Classe d'équivalence nb Heures
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+		System.out.println("vérification du nb Heures:");
+				
+		ArrayList<String> listNbH = new ArrayList<String>();
+		listNbH.add("10");
+		listNbH.add("11");
+		listNbH.add("40");
+				
+		for (String nbh:listNbH) {
+			if ((vc.VerifChaine(titre))&&(vc.VerifChaine(formateur))&&(vc.VerifChaine(prix))&&(vc.VerifChaine(nbh))) {
+				int nbh_int = Integer.parseInt(nbh);
+				int prix_int = Integer.parseInt(prix);
+				if(vc.VerifTitre(titre)&&(vc.VerifNbHeures(nbh_int))&&(vc.VerifPrix(prix_int))) {
+					Formation formation = new Formation(titre, formateur, prix_int, nbh_int);
+					Formations.listeFormations.add(formation);
+					Formations.displayList();
+					System.out.println("\n");
+				}else {
+					System.out.println(" un des paramètres entrés n'est pas valide !\n");
 				}
+						
+			}else {
+				System.out.println("l'un des paramétre est  vide!\n");
+			}
+		}
 	}
 
 }
